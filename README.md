@@ -17,5 +17,11 @@ make run
 
 This will build and run the project.
 
+To clean the generated files:
+
+```bash
+make clean
+```
+
 If "make" is not installed, then just type the commands manually. The Makefile contains the necessary commands
 
