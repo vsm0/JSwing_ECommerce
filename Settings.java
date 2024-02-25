@@ -1,7 +1,7 @@
 import java.awt.*;
 import javax.swing.*;
 
-public class Settings extends LFrame
+public class Settings extends Page
 {
 	Settings()
 	{
@@ -9,24 +9,13 @@ public class Settings extends LFrame
 
 		putLayout(new VLayout(content));
 
-		PageBuilder.createHeader("DigiBay - Settings", content);
+		createHeader("DigiBay - Settings");
 
-		fillBtn("Account", "Pocket", "History", "Wallet", "Preferences", "Close");
+		createVNavMenu("Account", "Pocket", "History", "Wallet", "Preferences", "Close");
 
-		PageBuilder.createFooter("DigiBay (c) 2024", content);
+		createFooter("DigiBay (c) 2024");
 		
 		display();
-	}
-
-	void fillBtn(String... args)
-	{
-		var menu = new NavMenu(this);
-		menu.putLayout(new VLayout(menu));
-
-		for (String s : args)
-			menu.addBtn(s);
-
-		addItem(menu);
 	}
 
 	void event(String e)

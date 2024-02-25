@@ -1,7 +1,7 @@
 import java.awt.*;
 import javax.swing.*;
 
-public class Index extends LFrame
+public class Index extends Page
 {
 	Index()
 	{
@@ -9,11 +9,11 @@ public class Index extends LFrame
 		
 		putLayout(new VLayout(content));
 
-		PageBuilder.createHeader("DigiBay", content);
+		createHeader("DigiBay");
 
-		PageBuilder.createSubtitle("your one stop digital store", content);
+		createSubtitle("your one stop digital store");
 		
-		PageBuilder.createNavMenu(this, content, "Search", "Post", "Settings");
+		createHNavMenu("Search", "Post", "Settings");
 
 		addItem(new FLabel("Available Items", FLabel.CENTER));
 
@@ -24,7 +24,7 @@ public class Index extends LFrame
 
 		addItem(gallery.getView());
 
-		PageBuilder.createFooter("DigiBay (c) 2024", content);
+		createFooter("DigiBay (c) 2024");
 		
 		display();
 	}

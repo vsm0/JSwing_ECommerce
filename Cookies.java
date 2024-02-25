@@ -1,7 +1,7 @@
 import java.awt.*;
 import javax.swing.*;
 
-public class Cookies extends LFrame
+public class Cookies extends Page
 {
 	Cookies()
 	{
@@ -9,11 +9,11 @@ public class Cookies extends LFrame
 
 		putLayout(new VLayout(content));
 
-		PageBuilder.createHeader("DigiBay - Account Center", content);
+		createHeader("DigiBay - Account Center");
 
-		PageBuilder.createNavMenu(this, content, "Login", "Register");
+		createHNavMenu("Login", "Register");
 
-		PageBuilder.createFooter("DigiBay (c) 2024", content);
+		createFooter("DigiBay (c) 2024");
 
 		display();	
 	}

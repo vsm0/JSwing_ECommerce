@@ -1,7 +1,7 @@
 import java.awt.*;
 import javax.swing.*;
 
-public class Post extends LFrame
+public class Post extends Page
 {
 	Post()
 	{
@@ -9,7 +9,7 @@ public class Post extends LFrame
 
 		putLayout(new VLayout(content));
 
-		PageBuilder.createHeader("DigiBay - New Post", content);
+		createHeader("DigiBay - New Post");
 
 		var titleField = new JTextField(20);
 		labelItem("Item Name", titleField);
@@ -23,9 +23,9 @@ public class Post extends LFrame
 		var descField = new JTextArea(10, 20);
 		labelItem("Description", descField);
 
-		PageBuilder.createNavMenu(this, content, "Cancel", "Publish");
+		createHNavMenu("Cancel", "Publish");
 
-		PageBuilder.createFooter("DigiBay (c) 2024", content);
+		createFooter("DigiBay (c) 2024");
 
 		display();
 	}
