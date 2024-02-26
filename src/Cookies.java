@@ -5,7 +5,7 @@ public class Cookies extends Page
 {
 	Cookies()
 	{
-		super("Account Control Page");
+		super("Account Control Page", 360, 240);
 
 		putLayout(new VLayout(content));
 
@@ -15,7 +15,7 @@ public class Cookies extends Page
 
 		createFooter("DigiBay (c) 2024");
 
-		display(360, 240);	
+		display();	
 	}
 
 	public void event(String e)

@@ -6,7 +6,7 @@ public class Index extends Page
 {
 	Index()
 	{
-		super("Index Page");
+		super("Index Page", 480, 360);
 		
 		putLayout(new VLayout(content));
 
@@ -27,7 +27,7 @@ public class Index extends Page
 
 		createFooter("DigiBay (c) 2024");
 		
-		display(480, 360);
+		display();
 	}
 
 	public void event(String e)

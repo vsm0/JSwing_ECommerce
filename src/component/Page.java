@@ -9,9 +9,9 @@ import view.*;
 
 public abstract class Page extends LFrame
 {
-	public Page(String title)
+	public Page(String title, int w, int h)
 	{
-		super(title);
+		super(title, w, h);
 	}
 
 	public abstract void event(String e);

@@ -8,7 +8,7 @@ public class Post extends Page
 {
 	Post()
 	{
-		super("Post Page");
+		super("Post Page", 240, 512);
 
 		putLayout(new VLayout(content));
 
@@ -30,7 +30,7 @@ public class Post extends Page
 
 		createFooter("DigiBay (c) 2024");
 
-		display(360, 480);
+		display();
 	}
 
 	void labelItem(String s, Component c)

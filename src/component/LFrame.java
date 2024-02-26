@@ -17,13 +17,14 @@ public abstract class LFrame extends JFrame implements ActionListener
 		event(e.getActionCommand());
 	}
 
-	public LFrame(String title)
+	public LFrame(String title, int w, int h)
 	{
 		super(title);
 
 		content = new LPanel();
 		add(content);
 
+		setSize(w, h);
 		setLocationRelativeTo(null);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 	}
@@ -33,9 +34,8 @@ public abstract class LFrame extends JFrame implements ActionListener
 		content.putLayout(layout);
 	}
 
-	public void display(int w, int h)
+	public void display()
 	{
-		setSize(w, h);
 		toFront();
 		requestFocus();
 		setVisible(true);
