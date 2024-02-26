@@ -7,6 +7,7 @@ It uses Java AWT/Swing, with a layer of abstraction to make coding the UI easier
 ![Screenshot](assets/screenshot.png)
 
 # Building
+
 **java** and **javac** must be installed.
 **make** is optional to make compiling easier.
 
@@ -35,5 +36,5 @@ To clean the generated files:
 make clean
 ```
 
-If "make" is not installed, then just type the commands manually. The Makefile contains the necessary commands
+If **make** is not installed, then just type the commands manually. The Makefile contains the necessary commands
 
