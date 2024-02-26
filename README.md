@@ -7,11 +7,13 @@ It uses Java AWT/Swing, with a layer of abstraction to make coding the UI easier
 ![Screenshot](assets/screenshot.png)
 
 # Building
+**java** and **javac** must be installed.
+**make** is optional to make compiling easier.
 
-To build, navigate to the folder via commandline.
-java, javac and make must be installed.
+Using **make**:
 
 type
+
 ```bash
 make
 ```
@@ -24,6 +26,8 @@ make run
 ```
 
 This will build and run the project.
+
+The first method cleans the build files after the program exits. Using the second methods means you need to manually clean them.
 
 To clean the generated files:
 
