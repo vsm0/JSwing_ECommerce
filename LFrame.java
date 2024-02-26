@@ -29,9 +29,9 @@ public abstract class LFrame extends JFrame implements ActionListener
 		content.putLayout(layout);
 	}
 
-	public void display()
+	public void display(int w, int h)
 	{
-		pack();
+		setSize(w, h);
 		toFront();
 		requestFocus();
 		setVisible(true);

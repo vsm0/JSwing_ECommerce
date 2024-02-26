@@ -15,7 +15,7 @@ public class Cookies extends Page
 
 		createFooter("DigiBay (c) 2024");
 
-		display();	
+		display(360, 240);	
 	}
 
 	void event(String e)

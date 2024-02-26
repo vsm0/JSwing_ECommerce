@@ -15,7 +15,7 @@ public class Settings extends Page
 
 		createFooter("DigiBay (c) 2024");
 		
-		display();
+		display(360, 480);
 	}
 
 	void event(String e)

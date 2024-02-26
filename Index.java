@@ -26,7 +26,7 @@ public class Index extends Page
 
 		createFooter("DigiBay (c) 2024");
 		
-		display();
+		display(480, 360);
 	}
 
 	void event(String e)

@@ -27,7 +27,7 @@ public class Post extends Page
 
 		createFooter("DigiBay (c) 2024");
 
-		display();
+		display(360, 480);
 	}
 
 	void labelItem(String s, Component c)
