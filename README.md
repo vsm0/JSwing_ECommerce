@@ -1,8 +1,12 @@
 # Description
 
-This repo contains the source code, assets and Makefile for the e-commerce app for ITE104
+This repo contains the source code, assets and Makefile for the e-commerce app for ITE104.
 
 It uses Java AWT/Swing, with a layer of abstraction to make coding the UI easier and more consistent.
+
+## Current Status
+
+The project so far is just a **mockup**, so no actual functionality. The only features that exist are to demonstrate the design and may or may not be changed/removed in future iterations.
 
 ![Screenshot](assets/screenshot.png)
 
