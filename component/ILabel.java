@@ -1,3 +1,5 @@
+package component;
+
 import java.io.*;
 import javax.imageio.*;
 import java.awt.*;
@@ -6,7 +8,7 @@ import javax.swing.*;
 
 public class ILabel extends JLabel
 {
-	ILabel(String path, int w, int h)
+	public ILabel(String path, int w, int h)
 	{
 		super();
 

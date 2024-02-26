@@ -1,5 +1,6 @@
-import java.awt.*;
-import javax.swing.*;
+import component.*;
+import layout.*;
+import view.*;
 
 public class Index extends Page
 {
@@ -29,7 +30,7 @@ public class Index extends Page
 		display(480, 360);
 	}
 
-	void event(String e)
+	public void event(String e)
 	{
 		switch (e)
 		{

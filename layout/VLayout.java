@@ -1,8 +1,11 @@
+package layout;
+
 import java.awt.*;
+import component.*;
 
 public class VLayout extends BLayout
 {
-	VLayout(LPanel p)
+	public VLayout(LPanel p)
 	{
 		super(p, V_ALIGN);
 	}

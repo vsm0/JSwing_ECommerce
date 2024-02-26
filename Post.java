@@ -1,6 +1,9 @@
 import java.awt.*;
 import javax.swing.*;
 
+import component.*;
+import layout.*;
+
 public class Post extends Page
 {
 	Post()
@@ -40,7 +43,7 @@ public class Post extends Page
 		addItem(group);
 	}
 
-	void event(String e)
+	public void event(String e)
 	{
 	}
 }

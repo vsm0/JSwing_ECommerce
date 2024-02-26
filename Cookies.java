@@ -1,5 +1,5 @@
-import java.awt.*;
-import javax.swing.*;
+import component.*;
+import layout.*;
 
 public class Cookies extends Page
 {
@@ -18,7 +18,7 @@ public class Cookies extends Page
 		display(360, 240);	
 	}
 
-	void event(String e)
+	public void event(String e)
 	{
 	}
 }

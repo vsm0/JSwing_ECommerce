@@ -1,16 +1,20 @@
+package component;
+
 import java.awt.*;
 import javax.swing.*;
+
+import layout.*;
 
 public class LPanel extends JPanel
 {
 	Layout layout;
 
-	LPanel()
+	public LPanel()
 	{
 		super();
 	}
 
-	LPanel(Layout l)
+	public LPanel(Layout l)
 	{
 		super();
 		putLayout(l);

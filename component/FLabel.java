@@ -1,5 +1,9 @@
+package component;
+
 import java.awt.*;
 import javax.swing.*;
+
+import layout.*;
 
 public class FLabel extends LPanel
 {
@@ -16,14 +20,14 @@ public class FLabel extends LPanel
 		addItem(label);
 	}
 
-	FLabel(String s, int align)
+	public FLabel(String s, int align)
 	{
 		super();
 		
 		create(s, align);
 	}
 
-	FLabel(String s)
+	public FLabel(String s)
 	{
 		super();
 

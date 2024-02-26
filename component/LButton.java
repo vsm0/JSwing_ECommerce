@@ -1,10 +1,13 @@
-import java.awt.*;
+package component;
+
 import java.awt.event.*;
 import javax.swing.*;
 
+import layout.*;
+
 public class LButton extends LPanel
 {
-	LButton(String s, ActionListener w)
+	public LButton(String s, ActionListener w)
 	{
 		super();
 

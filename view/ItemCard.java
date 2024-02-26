@@ -1,12 +1,17 @@
+package view;
+
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+
+import component.*;
+import layout.*;
 
 public class ItemCard extends LPanel
 {
 	ActionListener window;
 
-	ItemCard(Component icon, ActionListener w)
+	public ItemCard(Component icon, ActionListener w)
 	{
 		super();
 

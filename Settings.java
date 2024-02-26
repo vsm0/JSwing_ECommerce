@@ -1,5 +1,5 @@
-import java.awt.*;
-import javax.swing.*;
+import component.*;
+import layout.*;
 
 public class Settings extends Page
 {
@@ -18,7 +18,7 @@ public class Settings extends Page
 		display(360, 480);
 	}
 
-	void event(String e)
+	public void event(String e)
 	{
 		switch (e)
 		{

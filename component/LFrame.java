@@ -1,19 +1,23 @@
+package component;
+
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
+import layout.*;
+
 public abstract class LFrame extends JFrame implements ActionListener
 {
-	LPanel content;
+	protected LPanel content;
 
-	abstract void event(String e);
+	public abstract void event(String e);
 
 	public void actionPerformed(ActionEvent e)
 	{
 		event(e.getActionCommand());
 	}
 
-	LFrame(String title)
+	public LFrame(String title)
 	{
 		super(title);
 

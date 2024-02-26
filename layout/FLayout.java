@@ -1,4 +1,8 @@
+package layout;
+
 import java.awt.*;
+
+import component.*;
 
 public class FLayout extends FlowLayout implements Layout
 {
@@ -7,7 +11,7 @@ public class FLayout extends FlowLayout implements Layout
 	public static final int LEFT = FlowLayout.LEFT;
 	public static final int RIGHT = FlowLayout.RIGHT;
 
-	FLayout(LPanel p, int align)
+	public FLayout(LPanel p, int align)
 	{
 		super(align);
 

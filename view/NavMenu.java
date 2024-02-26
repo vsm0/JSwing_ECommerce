@@ -1,11 +1,15 @@
+package view;
+
 import java.awt.event.*;
 import javax.swing.*;
+
+import component.*;
 
 public class NavMenu extends LPanel
 {
 	ActionListener window;
 
-	NavMenu(ActionListener w)
+	public NavMenu(ActionListener w)
 	{
 		super();
 

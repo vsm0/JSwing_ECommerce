@@ -1,5 +1,8 @@
+package layout;
+
 import java.awt.*;
 import javax.swing.*;
+import component.*;
 
 public class BLayout extends BoxLayout implements Layout
 {
@@ -7,7 +10,7 @@ public class BLayout extends BoxLayout implements Layout
 	public static final int V_ALIGN = BoxLayout.Y_AXIS;
 	public static final int H_ALIGN = BoxLayout.X_AXIS;
 
-	BLayout(LPanel p, int axis)
+	public BLayout(LPanel p, int axis)
 	{
 		super(p, axis);
 		panel = p;

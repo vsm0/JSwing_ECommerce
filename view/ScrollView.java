@@ -1,9 +1,14 @@
+package view;
+
 import java.awt.*;
 import javax.swing.*;
 
+import component.*;
+import layout.*;
+
 public class ScrollView extends LPanel
 {
-	ScrollView()
+	public ScrollView()
 	{
 		super();
 
