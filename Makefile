@@ -3,6 +3,7 @@
 all: build run clean
 
 build:
+	mkdir -p build
 	javac -d build src/*.java src/*/*.java
 	ln -s assets build/assets
 
