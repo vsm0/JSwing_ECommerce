@@ -3,10 +3,11 @@
 all: build run clean
 
 build:
-	javac *.java */*.java
+	javac -d build src/*.java src/*/*.java
+	ln -s assets build/assets
 
 run:
-	java Main
+	java -cp build Main
 
 clean:
-	rm *.class */*.class
+	rm -rf build/*
