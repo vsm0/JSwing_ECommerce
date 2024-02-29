@@ -1,4 +1,5 @@
 build/*
+vendor/*
 
 # Compiled class file
 *.class
