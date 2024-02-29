@@ -1,40 +1,23 @@
 package system;
 
-import java.util.*;
-import com.google.gson.*;
-import com.google.gson.reflect.*;
-
-public class AccountDatabase
+public class AccountDatabase extends Database<Account>
 {
-	List<Account> db;
-	private String path;
-
-	public AccountDatabase(String path)
+	public AccountDatabase(String s)
 	{
-		this.path = path;
-		reload();
+		super(s);
 	}
 
 	public void reload()
 	{
-		var content = FileIO.getString(path);
-
-		if (content == null)
-		{
-			FileIO.putString(path, "[]");
-			content = FileIO.getString(path);
-		}
-
-		var gson = new Gson();
-
-		var t = new TypeToken<List<Account>>(){}.getType();
-
-		db = gson.fromJson(content, t);
+		var db = setup();
+	
+		for (Account a : db)
+			database.add(new Account(a.name, a.password));
 	}
 
 	public boolean hasAccount(String name, String pass)
 	{
-		for (Account a : db)
+		for (Account a : database)
 		{
 			if (!a.compareName(name))
 				continue;
@@ -50,7 +33,7 @@ public class AccountDatabase
 
 	public boolean hasAccount(String name)
 	{
-		for (Account a : db)
+		for (Account a : database)
 			if (a.compareName(name))
 				return true;
 
@@ -62,13 +45,11 @@ public class AccountDatabase
 		if (hasAccount(name))
 			return false;
 
-		var a = new Account(name, pass);
+		var a = new Account(name, Hash.parse(pass));
 
-		db.add(a);
+		database.add(a);
 
-		var g = new Gson();
-
-		var s = g.toJson(db);
+		var s = stringify(database);
 
 		FileIO.putString(path, s);
 

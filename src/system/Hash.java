@@ -1,6 +1,5 @@
 package system;
 
-import java.util.*;
 import java.security.*;
 import java.nio.charset.*;
 
@@ -21,10 +20,8 @@ public class Hash
 		return null;
 	}
 
-	public static boolean compare(String a, String b)
+	public static String parse(String s)
 	{
-		var hashA = hash(a);
-		var hashB = hash(b);
-		return Arrays.equals(hashA, hashB);
+		return new String(hash(s));
 	}
 }

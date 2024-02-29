@@ -12,4 +12,4 @@ run:
 	java -cp build:vendor/gson.jar Main
 
 clean:
-	rm -rf build/* data/*
+	rm -rf build/*

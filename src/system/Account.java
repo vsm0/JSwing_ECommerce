@@ -2,8 +2,8 @@ package system;
 
 public class Account
 {
-	private String name;
-	private String password;
+	protected String name;
+	protected String password;
 
 	public Account(String name, String password)
 	{
@@ -18,6 +18,6 @@ public class Account
 
 	public boolean comparePassword(String password)
 	{
-		return Hash.compare(this.password, password);
+		return Hash.parse(password).equals(this.password);
 	}
 }
