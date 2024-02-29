@@ -21,7 +21,7 @@ public class Hash
 		return null;
 	}
 
-	public static boolean compareHash(String a, String b)
+	public static boolean compare(String a, String b)
 	{
 		var hashA = hash(a);
 		var hashB = hash(b);
