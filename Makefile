@@ -4,7 +4,7 @@ all: build run clean
 
 build:
 	mkdir -p build
-	javac -d build src/*.java src/*/*.java
+	javac -cp vendor/gson.jar -d build src/*.java src/*/*.java
 	ln -s assets build/assets
 
 run:
