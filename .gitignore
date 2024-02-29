@@ -1,6 +1,5 @@
 build/*
 vendor/*
-data/*
 
 # Compiled class file
 *.class
