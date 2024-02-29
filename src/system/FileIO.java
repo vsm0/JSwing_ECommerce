@@ -1,5 +1,7 @@
 package system;
 
+import java.nio.file.*;
+
 public class FileIO
 {
 	public static String getString(String s)
@@ -8,7 +10,7 @@ public class FileIO
 
 		try
 		{
-			return Files.getString(path);
+			return Files.readString(path);
 		}
 		catch (Exception e)
 		{
