@@ -11,7 +11,7 @@ public class ItemCard extends LPanel
 {
 	ActionListener window;
 
-	public ItemCard(Component icon, ActionListener w)
+	public ItemCard(ActionListener w, ILabel icon, String name, String description, String price)
 	{
 		super();
 
@@ -21,9 +21,9 @@ public class ItemCard extends LPanel
 		c1.addItem(icon);
 
 		var c2 = column();
-		label(c2, "Item Name", FLabel.LEFT, new Font("Arial", Font.BOLD, 16));
-		label(c2, "Item Description", FLabel.LEFT, new Font("Arial", Font.ITALIC, 14));
-		label(c2, "$0.00", FLabel.RIGHT, new Font("Monospaced", Font.BOLD, 14));
+		label(c2, name, FLabel.LEFT, new Font("Arial", Font.BOLD, 16));
+		label(c2, description, FLabel.LEFT, new Font("Arial", Font.ITALIC, 14));
+		label(c2, "$" + price, FLabel.RIGHT, new Font("Monospaced", Font.BOLD, 14));
 
 		var c3 = column();
 		var optMenu = new NavMenu(w);
