@@ -34,15 +34,15 @@ public class ProductDatabase extends Database<Product>
 		for (Product p : database)
 			if (p.getName().equals(name))
 				return p;
-		return new Product("", "", "");
+		return new Product();
 	}
 
-	public boolean createItem(String name, String description, String price)
+	public boolean createItem(String name, String description, String price, String url)
 	{
 		if (hasItem(name))
 			return false;
 
-		var p = new Product(name, description, price);
+		var p = new Product(name, description, price, url);
 
 		database.add(p);
 

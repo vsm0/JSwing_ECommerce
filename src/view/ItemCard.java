@@ -13,13 +13,14 @@ public class ItemCard extends LPanel
 	ProductDatabase pdb = new ProductDatabase("./data/products.json");
 	ProductDatabase pocket = new ProductDatabase("./data/pocket.json");
 
-	public ItemCard(ILabel icon, String name, String description, String price)
+	public ItemCard(String name, String description, String price, String url)
 	{
 		super();
 
 		putLayout(new HLayout(this));
 
 		var c1 = column();
+		var icon = new ILabel(url, 50, 50);
 		c1.addItem(icon);
 
 		var c2 = column();
@@ -50,7 +51,8 @@ public class ItemCard extends LPanel
 		var name = item.getName();
 		var description = item.getDescription();
 		var price = item.getPrice();
-		pocket.createItem(name, description, price);
+		var url = item.getImageUrl();
+		pocket.createItem(name, description, price, url);
 	}
 
 	public void buyItem(String s)

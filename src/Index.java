@@ -31,8 +31,8 @@ public class Index extends Page
 			var name = p.getName();
 			var desc = p.getDescription();
 			var price = p.getPrice();
-			var icon = new ILabel("./assets/icon.jpg", 50, 50);
-			var item = new ItemCard(icon, name, desc, price);
+			var url = p.getImageUrl();
+			var item = new ItemCard(name, desc, price, url);
 			gallery.addItem(item);
 		}
 

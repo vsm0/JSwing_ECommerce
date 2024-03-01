@@ -2,16 +2,21 @@ package system;
 
 public class Product
 {
-//	private ILabel;
 	private String name;
 	private String description;
 	private String price;
+	private String imageUrl;
 
-	public Product(String name, String description, String price)
+	public Product(String name, String description, String price, String imageUrl)
 	{
 		this.name = name;
 		this.description = description;
 		this.price = price;
+		this.imageUrl = imageUrl;
+	}
+
+	public Product()
+	{
 	}
 
 	public String getName()
@@ -27,5 +32,10 @@ public class Product
 	public String getPrice()
 	{
 		return price;
+	}
+
+	public String getImageUrl()
+	{
+		return imageUrl;
 	}
 }

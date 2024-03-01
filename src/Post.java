@@ -75,7 +75,7 @@ public class Post extends Page
 		if (isInvalid(description))
 			return;
 
-		pdb.createItem(name, description, price);
+		pdb.createItem(name, description, price, url);
 
 		openIndex();
 	}
