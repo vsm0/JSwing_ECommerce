@@ -53,28 +53,34 @@ public class Post extends Page
 	{
 		var name = map.get("name").getText();
 
-		if (name == null || name.length() == 0)
+		if (isInvalid(name))
 			return;
 
 		var url = map.get("imageUrl").getText();
 
-		if (url == null || url.length() == 0)
+		if (isInvalid(url))
 			return;
 
 		var price = map.get("price").getText();
 
-		if (price == null || price.length() == 0)
+		if (isInvalid(price))
 			return;
 
 		var description = map.get("description").getText();
 
-		if (description == null || description.length() == 0)
+		if (isInvalid(description))
 			return;
 
 		var pdb = new ProductDatabase("./data/products.json");
 		pdb.createItem(name, description, price);
+		pdb.saveData();
 
 		openIndex();
+	}
+
+	boolean isInvalid(String s)
+	{
+		return s == null || s.length() == 0;
 	}
 
 	void openIndex()

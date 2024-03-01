@@ -16,9 +16,21 @@ public class NavMenu extends LPanel
 		window = w;
 	}
 
+	public NavMenu()
+	{
+		super();
+	}
+
 	public void addBtn(String s)
 	{
 		addItem(new LButton(s, window));
+	}
+
+	public LButton addBtn()
+	{
+		var button = new LButton();
+		addItem(button);
+		return button;
 	}
 }
 

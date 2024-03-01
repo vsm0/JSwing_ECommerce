@@ -29,6 +29,14 @@ public class ProductDatabase extends Database<Product>
 		return false;
 	}
 
+	public Product getItem(String name)
+	{
+		for (Product p : database)
+			if (p.getName().equals(name))
+				return p;
+		return new Product("", "", "");
+	}
+
 	public boolean createItem(String name, String description, String price)
 	{
 		if (hasItem(name))
@@ -38,10 +46,11 @@ public class ProductDatabase extends Database<Product>
 
 		database.add(p);
 
-		var s = stringify(database, Product.class);
-
-		FileIO.putString(path, s);
-
 		return true;
+	}
+
+	public void saveData()
+	{
+		super.saveData(Product.class);
 	}
 }

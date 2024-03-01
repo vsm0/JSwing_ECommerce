@@ -51,9 +51,7 @@ public class AccountDatabase extends Database<Account>
 
 		database.add(a);
 
-		var s = stringify(database, Account.class);
-
-		FileIO.putString(path, s);
+		saveData(Account.class);
 
 		return true;
 	}

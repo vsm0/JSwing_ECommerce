@@ -6,12 +6,14 @@ import javax.swing.*;
 
 import component.*;
 import layout.*;
+import system.*;
 
 public class ItemCard extends LPanel
 {
-	ActionListener window;
+	ProductDatabase pdb = new ProductDatabase("./data/products.json");
+	ProductDatabase pocket = new ProductDatabase("./data/pocket.json");
 
-	public ItemCard(ActionListener w, ILabel icon, String name, String description, String price)
+	public ItemCard(ILabel icon, String name, String description, String price)
 	{
 		super();
 
@@ -26,10 +28,12 @@ public class ItemCard extends LPanel
 		label(c2, "$" + price, FLabel.RIGHT, new Font("Monospaced", Font.BOLD, 14));
 
 		var c3 = column();
-		var optMenu = new NavMenu(w);
+		var optMenu = new NavMenu();
 		optMenu.putLayout(new VLayout(optMenu));
-		optMenu.addBtn("Add to pocket");
-		optMenu.addBtn("Buy");
+		optMenu.addBtn()
+			.init("Add to pocket", e -> pocketItem(name));
+		optMenu.addBtn()
+			.init("Buy", e -> buyItem(name));
 		c3.addItem(optMenu);
 	}
 
@@ -38,6 +42,19 @@ public class ItemCard extends LPanel
 		var l = new FLabel(s, align);
 		l.putFont(f);
 		panel.addItem(l);
+	}
+
+	public void pocketItem(String s)
+	{
+		var item = pdb.getItem(s);
+		var name = item.getName();
+		var description = item.getDescription();
+		var price = item.getPrice();
+		pocket.createItem(name, description, price);
+	}
+
+	public void buyItem(String s)
+	{
 	}
 
 	LPanel column()

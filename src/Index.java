@@ -6,7 +6,7 @@ import system.*;
 
 public class Index extends Page
 {
-	ProductDatabase pdb;
+	ProductDatabase pdb = new ProductDatabase("./data/products.json");
 
 	Index()
 	{
@@ -22,8 +22,6 @@ public class Index extends Page
 
 		addItem(new FLabel("Available Items", FLabel.CENTER));
 
-		pdb = new ProductDatabase("./data/products.json");
-
 		var gallery = new ScrollView();
 
 		for (Product p : pdb.getList())
@@ -32,7 +30,7 @@ public class Index extends Page
 			var desc = p.getDescription();
 			var price = p.getPrice();
 			var icon = new ILabel("./assets/icon.jpg", 50, 50);
-			var item = new ItemCard(this, icon, name, desc, price);
+			var item = new ItemCard(icon, name, desc, price);
 			gallery.addItem(item);
 		}
 
@@ -47,6 +45,8 @@ public class Index extends Page
 	{
 		switch (e)
 		{
+			case "Search":
+				break;
 			case "Post":
 				new Post();
 				fork();

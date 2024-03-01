@@ -7,9 +7,7 @@ import com.google.gson.reflect.*;
 
 public abstract class Database<T>
 {
-	private Type t = new TypeToken<List<T>>(){}.getType();
 	private Gson g = new Gson();
-
 	List<T> database = new ArrayList<>();
 	String path;
 
@@ -25,28 +23,24 @@ public abstract class Database<T>
 
 		if (content == null)
 		{
-			FileIO.putString(path, "[]");
-			content = FileIO.getString(path);
+			content = "[]";
+			FileIO.putString(path, content);
 		}
 
 		database.clear();
 
-		return parse(content, type);
+		return g.fromJson(content, getType(type));
 	}
 
-	public List<T> parse(String s, Class<T> type)
+	private Type getType(Class<T> type)
 	{
-	//	var listType = new TypeToken<List<T>>(){}
-	//		.where(new TypeParameter<T>{}, type)
-	//		.getType();
-		var listType = TypeToken.getParameterized(ArrayList.class, type).getType();
-		return g.fromJson(s, listType);
+		return TypeToken.getParameterized(ArrayList.class, type).getType();
 	}
 
-	public String stringify(List<T> l, Class<T> type)
+	public void saveData(Class<T> type)
 	{
-		var listType = TypeToken.getParameterized(ArrayList.class, type).getType();
-		return g.toJson(l, listType);
+		String s = g.toJson(database, getType(type));
+		FileIO.putString(path, s);
 	}
 
 	public abstract void reload();
