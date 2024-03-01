@@ -1,16 +1,18 @@
+import system.*;
 import component.*;
 import layout.*;
 import view.*;
 
-import system.*;
-
 public class Index extends Page
 {
-	ProductDatabase pdb = new ProductDatabase("./data/products.json");
+	ProductDatabase pdb;
 
 	Index()
 	{
 		super("Index Page", 480, 360);
+
+		var cfg = new ConfigDatabase();
+		pdb = new ProductDatabase(cfg.get().products);
 		
 		putLayout(new VLayout(content));
 

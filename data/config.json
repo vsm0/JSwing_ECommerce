@@ -1,0 +1,5 @@
+{
+	"products": "./data/products.json",
+	"accounts": "./data/accounts.json",
+	"pocket": "./data/accounts.json"
+}

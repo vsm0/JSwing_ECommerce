@@ -9,11 +9,15 @@ import javax.swing.text.*;
 
 public class Post extends Page
 {
+	ProductDatabase pdb;
 	Map<String, JTextComponent> map = new HashMap<>();
 
 	Post()
 	{
 		super("Post Page", 240, 512);
+
+		var cfg = new ConfigDatabase();
+		pdb = new ProductDatabase(cfg.get().products);
 
 		putLayout(new VLayout(content));
 
@@ -71,9 +75,7 @@ public class Post extends Page
 		if (isInvalid(description))
 			return;
 
-		var pdb = new ProductDatabase("./data/products.json");
 		pdb.createItem(name, description, price);
-		pdb.saveData();
 
 		openIndex();
 	}
@@ -85,6 +87,8 @@ public class Post extends Page
 
 	void openIndex()
 	{
+		pdb.saveData();
+
 		new Index();
 		fork();
 		dispose();

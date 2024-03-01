@@ -13,12 +13,24 @@ public abstract class Database<T>
 
 	public Database(String path)
 	{
-		this.path = path;
+		setPath(path);
 		reload();
+	}
+
+	public void setPath(String path)
+	{
+		this.path = path;
+	}
+
+	public String getPath()
+	{
+		return path;
 	}
 
 	List<T> setup(Class<T> type)
 	{
+		var path = getPath();
+
 		var content = FileIO.getString(path);
 
 		if (content == null)
@@ -39,6 +51,8 @@ public abstract class Database<T>
 
 	public void saveData(Class<T> type)
 	{
+		var path = getPath();
+
 		String s = g.toJson(database, getType(type));
 		FileIO.putString(path, s);
 	}
