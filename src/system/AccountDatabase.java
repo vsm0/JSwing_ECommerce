@@ -1,5 +1,7 @@
 package system;
 
+import com.google.gson.reflect.*;
+
 public class AccountDatabase extends Database<Account>
 {
 	public AccountDatabase(String s)
@@ -9,7 +11,7 @@ public class AccountDatabase extends Database<Account>
 
 	public void reload()
 	{
-		var db = setup();
+		var db = setup(Account.class);
 	
 		for (Account a : db)
 			database.add(new Account(a.name, a.password));
@@ -49,7 +51,7 @@ public class AccountDatabase extends Database<Account>
 
 		database.add(a);
 
-		var s = stringify(database);
+		var s = stringify(database, Account.class);
 
 		FileIO.putString(path, s);
 

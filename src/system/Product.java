@@ -2,13 +2,16 @@ package system;
 
 public class Product
 {
-//	private LImage;
+//	private ILabel;
 	private String name;
 	private String description;
 	private String price;
 
-	public void setImage(String path, int w, int h)
+	public Product(String name, String description, String price)
 	{
+		this.name = name;
+		this.description = description;
+		this.price = price;
 	}
 
 	public String getName()

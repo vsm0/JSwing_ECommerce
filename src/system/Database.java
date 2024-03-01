@@ -1,6 +1,6 @@
 package system;
 
-import java.lang.reflect.Type;
+import java.lang.reflect.*;
 import java.util.*;
 import com.google.gson.*;
 import com.google.gson.reflect.*;
@@ -19,7 +19,7 @@ public abstract class Database<T>
 		reload();
 	}
 
-	List<T> setup()
+	List<T> setup(Class<T> type)
 	{
 		var content = FileIO.getString(path);
 
@@ -31,19 +31,23 @@ public abstract class Database<T>
 
 		database.clear();
 
-		return parse(content);
+		return parse(content, type);
 	}
 
-	public List<T> parse(String s)
+	public List<T> parse(String s, Class<T> type)
 	{
-		return g.fromJson(s, t);
+	//	var listType = new TypeToken<List<T>>(){}
+	//		.where(new TypeParameter<T>{}, type)
+	//		.getType();
+		var listType = TypeToken.getParameterized(ArrayList.class, type).getType();
+		return g.fromJson(s, listType);
 	}
 
-	public String stringify(List<T> l)
+	public String stringify(List<T> l, Class<T> type)
 	{
-		return g.toJson(l);
+		var listType = TypeToken.getParameterized(ArrayList.class, type).getType();
+		return g.toJson(l, listType);
 	}
-
 
 	public abstract void reload();
 }

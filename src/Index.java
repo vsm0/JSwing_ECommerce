@@ -49,6 +49,8 @@ public class Index extends Page
 		{
 			case "Post":
 				new Post();
+				fork();
+				dispose();
 				break;
 			case "Settings":
 				new Settings();
