@@ -25,7 +25,7 @@ public abstract class Page extends LFrame
 
 	protected void createSubtitle(String s)
 	{
-		var label = new FLabel("your one stop digital store", FLabel.CENTER);
+		var label = new FLabel(s, FLabel.CENTER);
 		label.putFont(new Font("Arial", Font.ITALIC, 14));
 		content.addItem(label);
 	}

@@ -23,7 +23,15 @@ public class Settings extends Page
 		switch (e)
 		{
 			case "Account":
+				fork();
 				new Cookies();
+				dispose();
+				break;
+
+			case "Pocket":
+				fork();
+				new Pocket();
+				dispose();
 				break;
 		}
 	}
