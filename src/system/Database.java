@@ -53,7 +53,7 @@ public abstract class Database<T>
 	{
 		var path = getPath();
 
-		String s = g.prettier().toJson(database, getType(type));
+		String s = Json.prettier().toJson(database, getType(type));
 		FileIO.putString(path, s);
 	}
 

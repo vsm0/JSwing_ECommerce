@@ -1,10 +1,12 @@
 package system;
 
-public class Json extends Gson
+import com.google.gson.*;
+
+public class Json
 {
-	public Gson prettier()
+	public static Gson prettier()
 	{
-		return GsonBuilder()
+		return new GsonBuilder()
 			.setPrettyPrinting()
 			.create();
 	}
