@@ -3,13 +3,10 @@
 all: build run clean
 
 build:
-	mkdir -p build
-	javac -cp vendor/gson.jar -d build src/*.java src/*/*.java
-	ln -s assets build/assets
-	ln -s data build/data
+	./gradlew build --parallel
 
 run:
-	java -cp build:vendor/gson.jar Main
+	./gradlew run --parallel
 
 clean:
-	rm -rf build/*
+	./gradlew clean --parallel

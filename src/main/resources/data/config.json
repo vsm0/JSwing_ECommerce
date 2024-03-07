@@ -1,0 +1,7 @@
+{
+	"products": "products.json",
+	"accounts": "accounts.json",
+	"pocket": "pocket.json",
+	"gfx": "src/main/resources/gfx",
+	"data": "src/main/resources/data"
+}
